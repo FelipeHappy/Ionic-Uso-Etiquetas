@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Componentes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!-- Recorremos los objetos definidos en la interface del home page -->
+    <ion-item *ngFor="let c of componentes;"
+              [routerLink]="c.redirecTo"
+              detail>
+              <!-- La clase detail nos indica que se puede acceder, presionando la etiqueta -->
+      <!-- Llaves cuadradas en cada propiedad del campo, para que recorra cada objeto y le de formato segun su prestiva propiedad -->
+      <ion-icon [name]="c.icon" slot="start"></ion-icon>
+      <ion-label>{{c.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
